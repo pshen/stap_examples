@@ -1,0 +1,11 @@
+global reads, writes
+
+probe vfs.read
+{
+  reads[execname()] ++
+}
+
+probe vfs.write
+{
+    writes[execname()]++
+}

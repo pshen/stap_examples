@@ -1,5 +1,5 @@
 probe kernel.function("*@net/socket.c").call {
-    printf ("%s->%s\n", thread_indent(1), ppfunc())
+    printf ("%s->%s %d %s\n", thread_indent(1), execname(), cpu(), ppfunc())
 }
 
 probe kernel.function("*@net/socket.c").return {
